@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<section>  <br><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-1">
+        <div class="container">
+            <div class="row w-100 justify-content-center">
+                <div class="col-8">
+                    <form class="form-inline d-flex justify-content-center">
+                        <input class="form-control mr-2 w-75" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+
+        <div class="row">
+            <!-- Left Column: Categories -->
+            <div class="col-md-3">
+                <h6 class="text-center">categories</h6>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">ALL</a>
+                    <a href="#" class="list-group-item list-group-item-action">Laptop</a>
+                    <a href="#" class="list-group-item list-group-item-action">Mobile</a>
+                    <a href="#" class="list-group-item list-group-item-action">Cloths</a>
+                    <a href="#" class="list-group-item list-group-item-action">Books</a>
+                </div>
+            </div>
+
+
+            <!-- Right Column: Items -->
+            <div class="col-md-9">
+                <div class="row">
+                    <h6 class="text-center">Products</h6>
+                    <!-- Repeat this block for each product -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card">
+                            <img src="img/books2.jpg" class="card-img-top" alt="Book">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-text mb-1">Math Book</p>
+                                <p class="card-text mb-2">$ 400</p>
+                                <button class="btn btn-primary mt-auto">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card">
+                            <img src="img/shirt4.jpg" class="card-img-top" alt="Shirt">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-text mb-1">Stylish Shirt</p>
+                                <p class="card-text mb-2">$ 400</p>
+                                <button class="btn btn-primary mt-auto">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card">
+                            <img src="img/laptop2.jpg" class="card-img-top" alt="Laptop">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-text mb-1">Laptop</p>
+                                <p class="card-text mb-2">$ 400</p>
+                                <button class="btn btn-primary mt-auto">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card">
+                            <img src="img/tshirt5.jpg" class="card-img-top" alt="T-Shirt">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <p class="card-text mb-1">T-Shirt</p>
+                                <p class="card-text mb-2">$ 400</p>
+                                <button class="btn btn-primary mt-auto">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
