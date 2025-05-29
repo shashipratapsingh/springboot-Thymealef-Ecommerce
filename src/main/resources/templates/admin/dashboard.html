@@ -102,27 +102,36 @@
                 <textarea class="form-control" id="productDesc" rows="3" placeholder="Enter description"></textarea>
               </div>
               <div class="mb-3">
+                <label for="productPrice" class="form-label">Category</label>
+                <select class="form-control">
+                  <option>--select--</option>
+                  <option>Electoronic</option>
+                  <option>Cloloth</option>
+                </select>
+              </div>
+              <div class="mb-3">
                 <label for="productPrice" class="form-label">Price</label>
                 <input type="number" class="form-control" id="productPrice" placeholder="Enter price" />
               </div>
+
+              <div class="mb-3">
+                <label for="productPrice" class="form-label">Stock</label>
+                <input type="text" class="form-control" id="stock" />
+              </div>
+
+              <div class="mb-3">
+                <label  class="form-label">upload Img</label>
+                <input type="file" class="form-control" id="img" placeholder="Enter Stock" />
+              </div>
+
+
               <button type="submit" class="btn btn-primary">Add Product</button>
             </form>
           </div>
 
-          <div class="tab-pane fade" id="manage-orders" role="tabpanel" aria-labelledby="manage-orders-tab">
-            <h3>Manage Orders</h3>
-            <p>Order management content goes here.</p>
-          </div>
 
-          <div class="tab-pane fade" id="manage-users" role="tabpanel" aria-labelledby="manage-users-tab">
-            <h3>Manage Users</h3>
-            <p>User management content goes here.</p>
-          </div>
 
-          <div class="tab-pane fade" id="view-products" role="tabpanel" aria-labelledby="view-products-tab">
-            <h3>View Products</h3>
-            <p>Product listing content goes here.</p>
-          </div>
+
         </div>
       </div>
     </div>
