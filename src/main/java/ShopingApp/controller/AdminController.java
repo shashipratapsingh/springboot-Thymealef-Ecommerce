@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/Admin")
 public class AdminController {
+
     @GetMapping("/")
-    public String index()
-    {
-        return "index";
+    public String index() {
+        return "admin/dashboard"; // Loads templates/admin/dashboard.html
     }
 }
+
