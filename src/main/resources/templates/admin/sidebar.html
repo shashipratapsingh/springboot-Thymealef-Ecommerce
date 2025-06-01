@@ -17,39 +17,122 @@
 <body>
 <div th:fragment="sidebar">
   <div id="sidebar" class="p-4">
-    <h4 >Admin Dashboard</h4>
+    <a th:href="@{/admin/}" class="text-decoration-none">
+      <h4>Admin Dashboard</h4>
+    </a>
     <hr>
-    <ul class="nav nav-pills flex-column" id="sidebarMenu" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/admin/}">
-          <i class="fa-solid fa-plus me-2"></i>Add Product
+    <ul class="nav nav-pills flex-column bg-primary " id="sidebarMenu" role="tablist">
+      <li class="nav-item ">
+        <a class="nav-link text-light" th:href="@{/admin/addProduct}">
+          <i class="fa-solid fa-plus me-2 text-light"></i><span> Add Product</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/admin/category}">
-          <i class="fa-solid fa-box me-2"></i>Categories
+        <a class="nav-link text-light" th:href="@{/admin/category}">
+          <i class="fa-solid fa-box me-2 text-light"></i>Categories
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="view-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#manage-users" role="tab">
-          <i class="fa-solid fa-users me-2"></i>View Product
+        <a class="nav-link text-light" id="view-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#manage-users" role="tab">
+          <i class="fa-solid fa-users me-2 text-light"></i>View Product
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="Order-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
-          <i class="fa-solid fa-book me-2"></i>Order
+        <a class="nav-link text-light" id="Order-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Order
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" id="Delivered-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Delivered products
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" id="pending-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Pending products
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="user-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
-          <i class="fa-solid fa-book me-2"></i>User
+        <a class="nav-link text-light" id="approved-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Approved products
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="add-admin-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
-          <i class="fa-solid fa-book me-2"></i>Add Admin
+        <a class="nav-link text-light" th:href="@{/admin/orders}">
+          <i class="fa-solid fa-receipt me-2 text-light"></i>All Orders
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/inventory}">
+          <i class="fa-solid fa-warehouse me-2 text-light"></i>Inventory
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" id="rejected-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Rejected products
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" id="Manage-Profile-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Manege Profiles
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/shipping}">
+          <i class="fa-solid fa-truck me-2 text-light"></i>Shipping
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/returns}">
+          <i class="fa-solid fa-undo me-2 text-light"></i>Return Requests
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/support}">
+          <i class="fa-solid fa-headset me-2 text-light"></i>Support Tickets
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/coupons}">
+          <i class="fa-solid fa-tags me-2 text-light"></i>Coupons
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/admin/reports}">
+          <i class="fa-solid fa-chart-line me-2 text-light"></i>Reports & Stats
+        </a>
+      </li>
+
+
+      <li class="nav-item text-light">
+        <a class="nav-link text-light" id="user-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>User
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" id="add-admin-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>Add Admin
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light" id="setting-tab" href="#" data-bs-toggle="tab" data-bs-target="#view-products" role="tab">
+          <i class="fa-solid fa-book me-2 text-light"></i>settings
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" th:href="@{/logout}">
+          <i class="fa-solid fa-sign-out-alt me-2 text-light"></i>Logout
+        </a>
+      </li>
+
     </ul>
   </div>
 </div>

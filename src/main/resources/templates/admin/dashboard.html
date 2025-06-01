@@ -11,73 +11,59 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
 
   <style>
-    body {
-      background-color: #f8f9fa;
-    }
+    .dashboard-card {
+    color: white;
+    padding: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 130px;
+    transition: transform 0.2s ease;
+  }
 
-    #sidebar {
-      background: #343a40;
-      min-height: 100vh;
-      border-radius: 0 0.5rem 0.5rem 0;
-      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-    }
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+  }
 
-    #sidebar .nav-link {
-      color: #ccc;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
+  /* Custom gradient colors */
+  .bg-purple {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  }
 
-    #sidebar .nav-link:hover,
-    #sidebar .nav-link.active {
-      background-color: #495057;
-      color: #fff;
-      font-weight: 600;
-    }
+  .bg-teal {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+  }
 
-    #sidebar h4 {
-      font-size: 1.3rem;
-      margin-bottom: 30px;
-      font-weight: 600;
-      color: #f8f9fa;
-    }
+  .bg-orange {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+  }
 
-    #main-content {
-      background: white;
-      border-radius: 0.5rem;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-    }
+  .bg-green {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+  }
 
-    h3 {
-      border-bottom: 2px solid #dee2e6;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-    }
+  .dashboard-card h5 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
 
-    .form-control:focus {
-      box-shadow: none;
-      border-color: #0d6efd;
-    }
+  .dashboard-card p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+  }
 
-    .btn-primary {
-      background-color: #0d6efd;
-      border: none;
-      padding: 10px 20px;
-      font-weight: 500;
-    }
+  .dashboard-card i {
+    font-size: 2rem;
+    opacity: 0.8;
+    align-self: flex-end;
+  }
+.ml-5 {
+   margin-left: 10px;
+}
 
-    .btn-primary:hover {
-      background-color: #0b5ed7;
-    }
-
-    @media (max-width: 768px) {
-      #sidebar {
-        margin-bottom: 20px;
-        border-radius: 0.5rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -89,45 +75,49 @@
 
       <!-- Main Content -->
       <div class="col-md-9 mt-5">
-        <div id="main-content" class="tab-content mt-3">
-          <div class="tab-pane fade show active" id="add-product" role="tabpanel" aria-labelledby="add-product-tab">
-            <h3>Add Product</h3>
-            <form>
-              <div class="mb-3">
-                <label for="productName" class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="productName" placeholder="Enter product name" />
-              </div>
-              <div class="mb-3">
-                <label for="productDesc" class="form-label">Description</label>
-                <textarea class="form-control" id="productDesc" rows="3" placeholder="Enter description"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="productPrice" class="form-label">Category</label>
-                <select class="form-control">
-                  <option>--select--</option>
-                  <option>Electoronic</option>
-                  <option>Cloloth</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="productPrice" class="form-label">Price</label>
-                <input type="number" class="form-control" id="productPrice" placeholder="Enter price" />
-              </div>
-
-              <div class="mb-3">
-                <label for="productPrice" class="form-label">Stock</label>
-                <input type="text" class="form-control" id="stock" />
-              </div>
-
-              <div class="mb-3">
-                <label  class="form-label">upload Img</label>
-                <input type="file" class="form-control" id="img" placeholder="Enter Stock" />
-              </div>
+        <div id="main-content" class="tab-content mt-3 bg-light">
+          <a th:href="@{/admin/}" class="text-decoration-none">
+            <h4> Dashboard</h4>
+          </a>
 
 
-              <button type="submit" class="btn btn-primary">Add Product</button>
-            </form>
+          <div class="row g-4 mt-4">
+            <div class="card bg-danger" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-light">All Orders</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card bg-success ms-5" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-light">Motherly Profiles</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+
+            <div class="card bg-warning ms-5"  style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-light"> Monthly Loss</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+
+            <div class="card bg-primary ms-5" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-light"> Monthly Added Customers</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
           </div>
+
+
+
 
 
 
