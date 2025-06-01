@@ -1,39 +1,84 @@
-<!-- File: templates/admin/category.html -->
+<!-- File: templates/admin/addCategory.html -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{admin/base::layout(~{::section})}">
 <head>
-    <meta charset="UTF-8" />
-    <title>Categories</title>
+  <meta charset="UTF-8" />
+  <title>categories</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+
+  <!-- DataTables CSS -->
+  <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap4.min.css" rel="stylesheet" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha384-+wDzT+6My5C49J1Gy/K+DYGj0TXMpt1HtUqQ7LuFg7z0zpQlS+QDx3Ho6Us+0Oap"
+          crossorigin="anonymous"></script>
+
+  <!-- Popper.js and Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkL7xKMTx7i9/rb+YYtQ+v9GYQNH98zG/jR1pR7T"
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"
+          integrity="sha384-B4gt1jrGC7Jh4AgzF4xS1nRJG+E4xNJZoVh5zRrqK0Q2nJt2V7Etu2M05h5IQfH6"
+          crossorigin="anonymous"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.1/js/responsive.bootstrap4.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#example').DataTable({
+        responsive: true,
+        paging: true,           // enable pagination
+        searching: true,        // enable search box
+        ordering: true,         // enable sorting
+        lengthChange: true      // allow changing number of rows per page
+      });
+    });
+  </script>
+
 </head>
+
 <body>
 <section>
-    <div class="container-fluid mt-5">
-        <div class="row  mt-5">
-            <!-- Sidebar -->
-            <div class="col-md-3 mb-4" th:insert="~{admin/sidebar :: sidebar}"></div>
+  <div class="container-fluid mt-5">
+    <div class="row mt-5">
+      <!-- Sidebar -->
+      <div class="col-md-3 mb-4" th:insert="~{admin/sidebar :: sidebar}"></div>
 
-            <!-- Main Content -->
-            <div class="col-md-5 mt-5">
-                <div id="main-content mt-5">
-                    <h3>Manage Categories</h3>
-                    <form method="post" th:action="@{/admin/saveCategory}" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="categoryName" class="form-label">Enter Category Name</label>
-                            <input type="text" class="form-control" id="categoryName" name="name" placeholder="Category name" required />
-                        </div>
+      <!-- Main Content -->
+      <div class="col-md-9 mt-5" id="main-content">
+        <h3> categories</h3>
+        <table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+          <thead>
+          <tr>
+            <th>SR NO.</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Action</th>
 
-                        <div class="mb-3">
-                            <label class="form-label">Upload Image</label>
-                            <input type="file" class="form-control" name="image" />
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Save Category</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+          </tr>
+          <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </section>
 </body>
 </html>
