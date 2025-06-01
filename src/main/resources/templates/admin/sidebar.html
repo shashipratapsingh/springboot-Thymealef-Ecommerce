@@ -21,7 +21,7 @@
       <h4>Admin Dashboard</h4>
     </a>
     <hr>
-    <ul class="nav nav-pills flex-column bg-primary " id="sidebarMenu" role="tablist">
+    <ul class="nav nav-pills card flex-column bg-primary " id="sidebarMenu" role="tablist">
       <li class="nav-item ">
         <a class="nav-link text-light" th:href="@{/admin/addProduct}">
           <i class="fa-solid fa-plus me-2 text-light"></i><span> Add Product</span>
@@ -33,8 +33,8 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" id="view-product-tab" href="#" data-bs-toggle="tab" data-bs-target="#manage-users" role="tab">
-          <i class="fa-solid fa-users me-2 text-light"></i>View Product
+        <a class="nav-link  text-light" th:href="@{/admin/products}">
+          <i class="fa-solid fa-users me-2 text-light"></i> Products
         </a>
       </li>
       <li class="nav-item">
