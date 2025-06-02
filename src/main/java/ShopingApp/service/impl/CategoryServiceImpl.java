@@ -26,6 +26,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Boolean findByName(String name) {
-        return this.categoryRepository.findByName(name);
+        return this.categoryRepository.existsByName(name);
     }
 }

@@ -9,16 +9,20 @@ import jakarta.persistence.Id;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id; // Changed from int to Integer
+
     private String name;
+
     private String imageName;
+
     private Boolean isActive;
 
-    public int getId() {
+    // Getters and Setters
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -38,28 +42,12 @@ public class Category {
         this.imageName = imageName;
     }
 
-    public Boolean getActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", imageName='" + imageName + '\'' +
-                ", isActive=" + isActive +
-                '}';
-    }
-
-    public Category(int id, String name, String imageName, Boolean isActive) {
-        this.id = id;
-        this.name = name;
-        this.imageName = imageName;
+    public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
     }
+
 }

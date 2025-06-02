@@ -17,7 +17,7 @@
             <div class="col-md-5 mt-5">
                 <div id="main-content mt-5">
                     <h3>Manage Categories</h3>
-                    <form method="post" th:action="@{/admin/saveCategory}" enctype="multipart/form-data">
+                    <form method="post" th:action="@{/admin/saveCategory}" th:object="${category}" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="categoryName" class="form-label">Enter Category Name</label>
                             <input type="text" class="form-control" id="categoryName" name="name" placeholder="Category name" required />
