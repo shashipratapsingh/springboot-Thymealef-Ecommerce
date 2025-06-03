@@ -67,11 +67,11 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>1</td>
-            <td>Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
+          <tr th:each="message : ${messages}">
+            <td th:text="${message.id}">1</td>
+            <td th:text="${message.name}">Name</td>
+            <td th:text="${message.imageName}">Image Name</td>
+            <td th:text="${message.isActive}">Active or Not</td>
           </tr>
           <!-- Add more rows as needed -->
           </tbody>

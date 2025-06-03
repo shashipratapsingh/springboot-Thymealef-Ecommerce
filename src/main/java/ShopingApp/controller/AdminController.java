@@ -5,7 +5,7 @@ import ShopingApp.service.CategoryService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.ObjectUtils;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,7 +31,8 @@ public class AdminController {
         return "admin/addCategory";
     }
     @GetMapping("/category")
-    public String category() {
+    public String category(Model model) {
+        model.addAttribute("messages", categoryService.getAllCategory());
         return "admin/category";
     }
 
