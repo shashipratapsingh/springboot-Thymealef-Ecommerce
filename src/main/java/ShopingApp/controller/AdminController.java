@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -22,9 +24,14 @@ public class AdminController {
     }
 
     @GetMapping("/addProduct")
-    public String addProduct() {
+    public String addProduct(Model model) {
+        //model.addAttribute("product", new Product()); // add this
+        List<Category> categories = categoryService.findAllByName();
+        System.out.println("Categories fetched from DB: " + categories);
+        model.addAttribute("categories", categories);
         return "admin/addProduct";
     }
+
 
     @GetMapping("/addCategory")
     public String addCategory() {

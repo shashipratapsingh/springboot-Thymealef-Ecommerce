@@ -50,4 +50,23 @@ public class Category {
         this.isActive = isActive;
     }
 
+    public Category(Integer id, String name, String imageName, Boolean isActive) {
+        this.id = id;
+        this.name = name;
+        this.imageName = imageName;
+        this.isActive = isActive;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", imageName='" + imageName + '\'' +
+                ", isActive=" + isActive +
+                '}';
+    }
+
+    public Category() {
+    }
 }

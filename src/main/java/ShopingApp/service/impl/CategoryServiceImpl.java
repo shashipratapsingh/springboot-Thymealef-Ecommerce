@@ -28,4 +28,8 @@ public class CategoryServiceImpl implements CategoryService {
     public Boolean findByName(String name) {
         return this.categoryRepository.existsByName(name);
     }
+    @Override
+    public List<Category> findAllByName() {
+        return categoryRepository.findAllByName();
+    }
 }
